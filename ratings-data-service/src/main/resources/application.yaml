@@ -1,18 +1,26 @@
 spring:
     application:
         name: ratings-data-service
+    # sleuth:
+    #   otel:
+    #     config:
+    #       trace-id-ratio-based: 1.0
+    #     exporter:
+    #       otlp:
+    #         endpoint: http://sleuth:4317
 
 server:
     port: 8082
 
-tracing:
-  url: http://localhost:4318/v1/traces
+# tracing:
+#   url: http://localhost:4318/v1/traces
 
-management:
-  tracing:
-    sampling:
-      probability: 1.0
+# management:
+#   tracing:
+#     sampling:
+#       probability: 1.0
 
-logging:
-  pattern:
-    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+# logging:
+  # pattern:
+    # level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+
